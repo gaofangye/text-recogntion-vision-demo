@@ -11,6 +11,8 @@
 		A58AFAB32AB144B3007EE733 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A58AFAB22AB144B3007EE733 /* ContentView.swift */; };
 		A58AFAB52AB144B5007EE733 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A58AFAB42AB144B5007EE733 /* Assets.xcassets */; };
 		A58AFAB82AB144B5007EE733 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A58AFAB72AB144B5007EE733 /* Preview Assets.xcassets */; };
+		A58AFABF2AB1450A007EE733 /* ImagePicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = A58AFABE2AB1450A007EE733 /* ImagePicker.swift */; };
+		A58AFAC22AB14E5A007EE733 /* VisionTextInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = A58AFAC12AB14E5A007EE733 /* VisionTextInfo.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -19,6 +21,8 @@
 		A58AFAB22AB144B3007EE733 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		A58AFAB42AB144B5007EE733 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		A58AFAB72AB144B5007EE733 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		A58AFABE2AB1450A007EE733 /* ImagePicker.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImagePicker.swift; sourceTree = "<group>"; };
+		A58AFAC12AB14E5A007EE733 /* VisionTextInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VisionTextInfo.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -51,6 +55,8 @@
 		A58AFAAF2AB144B3007EE733 /* text-recogntion-vision-demo */ = {
 			isa = PBXGroup;
 			children = (
+				A58AFAC02AB14E47007EE733 /* Model */,
+				A58AFABE2AB1450A007EE733 /* ImagePicker.swift */,
 				A58AFAB02AB144B3007EE733 /* text_recogntion_vision_demoApp.swift */,
 				A58AFAB22AB144B3007EE733 /* ContentView.swift */,
 				A58AFAB42AB144B5007EE733 /* Assets.xcassets */,
@@ -65,6 +71,14 @@
 				A58AFAB72AB144B5007EE733 /* Preview Assets.xcassets */,
 			);
 			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		A58AFAC02AB14E47007EE733 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				A58AFAC12AB14E5A007EE733 /* VisionTextInfo.swift */,
+			);
+			path = Model;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -137,6 +151,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A58AFAC22AB14E5A007EE733 /* VisionTextInfo.swift in Sources */,
+				A58AFABF2AB1450A007EE733 /* ImagePicker.swift in Sources */,
 				A58AFAB32AB144B3007EE733 /* ContentView.swift in Sources */,
 				A58AFAB12AB144B3007EE733 /* text_recogntion_vision_demoApp.swift in Sources */,
 			);
