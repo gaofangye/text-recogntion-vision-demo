@@ -99,10 +99,10 @@ struct ContentView: View {
             let boundingBox = boxObservation?.boundingBox ?? .zero
             
             // Convert the rectangle from normalized coordinates to image coordinates.
-            guard let cgImage = selectedImage?.cgImage else { return }
-            let rects = convert(boundingBox: boundingBox, to: CGRect(origin: .zero, size: CGSize(width: cgImage.width, height: cgImage.height)))
-            
-            let visionTextInfo = VisionTextInfo(text: recognizedStrings.description, frame: rects)
+            let normalizedRect = VNImageRectForNormalizedRect(boundingBox,
+                                                              Int(selectedImage!.size.width),
+                                                              Int(selectedImage!.size.height))
+            let visionTextInfo = VisionTextInfo(text: recognizedStrings.description, frame: normalizedRect)
             visionTextInfos.append(visionTextInfo)
         }
         
@@ -110,33 +110,7 @@ struct ContentView: View {
         let visionTextInfosJson = String(bytes: visionTextInfosData!, encoding: .utf8)
         print(visionTextInfosJson!.description)
     }
-    
-    func convert(boundingBox: CGRect, to bounds: CGRect) -> CGRect {
-        let imageWidth = bounds.width
-        let imageHeight = bounds.height
-        
-        // Begin with input rect.
-        var rect = boundingBox
-        
-        // Reposition origin.
-        rect.origin.x *= imageWidth
-        rect.origin.x += bounds.minX
-        rect.origin.y = (1 - rect.maxY) * imageHeight + bounds.minY
-        
-        // Rescale normalized coordinates.
-        rect.size.width *= imageWidth
-        rect.size.height *= imageHeight
-        
-        return rect
-    }
-    
-    func processResults(recognizedStrings: [String]) {
-        let result = recognizedStrings.joined(separator: " ")
-        print(result)
-    }
 }
-
-
 
 struct ContentView_Previews: PreviewProvider {
     static var previews: some View {
