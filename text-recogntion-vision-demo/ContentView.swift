@@ -102,7 +102,14 @@ struct ContentView: View {
             let normalizedRect = VNImageRectForNormalizedRect(boundingBox,
                                                               Int(selectedImage!.size.width),
                                                               Int(selectedImage!.size.height))
-            let visionTextInfo = VisionTextInfo(text: recognizedStrings.description, frame: normalizedRect)
+            // Vision 的 Y 坐标与 UIKit/SwiftUI 的 Y 坐标方向相反，因此需要反转。
+            let yInImage = selectedImage!.size.height - normalizedRect.minY - normalizedRect.height
+            let reverseCGect = CGRect(x: normalizedRect.minX,
+                          y: yInImage,
+                          width: normalizedRect.width,
+                          height: normalizedRect.height)
+            
+            let visionTextInfo = VisionTextInfo(text: recognizedStrings.description, frame: reverseCGect)
             visionTextInfos.append(visionTextInfo)
         }
         
